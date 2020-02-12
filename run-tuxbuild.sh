@@ -94,7 +94,7 @@ if [[ -z ${FILE} ]]; then
 	exit 0
 fi
 
-OUTPUTDIR=${TOP}/$(date +"%Y%m%d-%H")
+OUTPUTDIR=${TOP}/$(date +"%Y%m%d-%H%m")
 mkdir -p ${OUTPUTDIR}
 tb_json_artifact="${OUTPUTDIR}/build-artifact.json"
 logfilename=$(echo $(basename ${FILE})|awk -F. '{print $1}').log
