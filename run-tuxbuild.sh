@@ -51,6 +51,7 @@ download_files() {
 		download_file "${url}$(remove_quotes $(cat bmeta.json| jq '.modules'))"
 	fi
 	cd -
+	echo ${OUTPUTDIR}/${builddir}
 }
 
 DEFAULT_FILE_LIST="build.log kernel.config"
