@@ -98,7 +98,7 @@ OUTPUTDIR=${TOP}/$(date +"%Y%m%d-%H%m")
 mkdir -p ${OUTPUTDIR}
 tb_json_artifact="${OUTPUTDIR}/build-artifact.json"
 logfilename=$(echo $(basename ${FILE})|awk -F. '{print $1}').log
-echo tuxbuild build-set --git-repo ${GIT_REPOSITORY} --git-ref ${BRANCH} --tux-config ${FILE} --set-name basic --json-out ${tb_json_artifact} | tee ${OUTPUTDIR}/${logfilename}
+echo tuxbuild build-set --git-repo ${GIT_REPOSITORY} --git-sha ${BRANCH} --tux-config ${FILE} --set-name basic --json-out ${tb_json_artifact} | tee ${OUTPUTDIR}/${logfilename}
 tuxbuild build-set --git-repo ${GIT_REPOSITORY} --git-ref ${BRANCH} --tux-config ${FILE} --set-name basic --json-out ${tb_json_artifact} 2>&1 | tee -a ${OUTPUTDIR}/${logfilename}
 
 if [[ ${RANDCONFIG} -eq 1 ]]; then
